@@ -1,0 +1,263 @@
+TinyFlix Test Plan
+1. Introduction
+1.1 Purpose
+This test plan outlines the testing strategy for the TinyFlix video streaming application.
+1.2 Scope
+This test plan covers functional testing, non-functional testing, and accessibility testing of the TinyFlix application.
+1.3 References
+•	TinyFlix Application
+•	Candidate Instructions
+•	Bug Report Template
+2. Test Strategy
+2.1 Testing Approach
+•	Manual testing for initial exploration and bug identification
+•	Automated testing for regression testing and continuous integration
+•	Accessibility testing using WCAG guidelines
+•	Performance testing for responsiveness and load handling
+2.2 Test Environment
+•	Browser: Chrome
+•	Devices: Desktop
+
+2.3 Test Data
+•	Sample videos with various durations and formats
+•	User accounts with different permission levels
+•	Edge case data for validation testing
+3. Test Cases
+3.1 Video Playback
+TC-001: Video Play/Pause
+•	Description: Verify that videos can be played and paused
+•	Prerequisites: Application is loaded, video is available
+•	Test Steps:
+i.	Click on a video card
+ii.	Click the play button
+iii.	Verify video starts playing
+iv.	Click the pause button
+v.	Verify video pauses
+•	Expected Results: Video plays when play button is clicked and pauses when pause button is clicked
+•	Actual Results: Video is not played when play button is clicked and not paused for pause button.
+•	Status: Fail
+TC-002: Volume Control
+•	Description: Verify that volume can be adjusted
+•	Prerequisites: Application is loaded, video is playing
+•	Test Steps:
+i.	Play a video
+ii.	Adjust volume slider
+iii.	Verify volume changes
+iv.	Mute the video
+v.	Verify video is muted
+•	Expected Results: Volume changes when slider is adjusted, video mutes when mute button is clicked
+•	Actual Results: Not able to verify since play button is not working.
+•	Status: Unverified
+TC-003: Playback Rate
+•	Description: Verify that playback rate can be changed
+•	Prerequisites: Application is loaded, video is playing
+•	Test Steps:
+i.	Play a video
+ii.	Change playback rate to 1.5x
+iii.	Verify video plays at 1.5x speed
+iv.	Change playback rate to 0.5x
+v.	Verify video plays at 0.5x speed
+•	Expected Results: Video plays at the selected playback rate
+•	Actual Results: Not able to verify since play button is not working
+•	Status: Unverified
+3.2 Search and Filter
+TC-004: Search by Title
+•	Description: Verify that videos can be searched by title
+•	Prerequisites: Application is loaded
+•	Test Steps:
+i.	Enter a video title in the search box
+ii.	Press Enter
+iii.	Verify matching videos are displayed
+•	Expected Results: Only videos with matching titles are displayed
+•	Actual Results: Only videos with matching titles are displayed
+•	Status: Pass
+TC-005: Search by Tags
+•	Description: Verify that videos can be searched by tags
+•	Prerequisites: Application is loaded
+•	Test Steps:
+i.	Enter a tag in the search box
+ii.	Press Enter
+iii.	Verify videos with matching tags are displayed
+•	Expected Results: Videos with matching tags are displayed
+•	Actual Results: Videos with matching tags are displayed
+•	Status: Pass
+TC-006: Filter by Recent
+•	Description: Verify that videos can be filtered by recency
+•	Prerequisites: Application is loaded
+•	Test Steps:
+i.	Select "Recent" from the filter dropdown
+ii.	Verify only recent videos are displayed
+•	Expected Results: Only videos published in the last 30 days are displayed
+•	Actual Results: Videos not displayed
+•	Status: Fail
+3.3 Bookmarks
+TC-007: Add Bookmark
+•	Description: Verify that bookmarks can be added
+•	Prerequisites: Application is loaded, video is playing
+•	Test Steps:
+i.	Play a video
+ii.	Click the bookmark button at a specific timestamp
+iii.	Verify bookmark is added to the bookmark list
+•	Expected Results: Bookmark is added with correct timestamp and title
+•	Actual Results: Bookmark is added
+•	Status: Pass
+TC-008: Navigate to Bookmark
+•	Description: Verify that clicking a bookmark navigates to the correct timestamp
+•	Prerequisites: Application is loaded, bookmarks exist
+•	Test Steps:
+i.	Click on a bookmark in the bookmark list
+ii.	Verify video jumps to the correct timestamp
+•	Expected Results: Video jumps to the timestamp of the bookmark
+•	Actual Results: Video does not jump to the timestamp of the bokmark
+•	Status: Fail
+3.4 Comments
+TC-009: Add Comment
+•	Description: Verify that comments can be added
+•	Prerequisites: Application is loaded, video is selected
+•	Test Steps:
+i.	Enter a comment in the comment box
+ii.	Click "Post Comment"
+iii.	Verify comment appears in the comments list
+•	Expected Results: Comment is added to the comments list
+•	Actual Results: Comment is added to the comments list
+•	Status: [Pass/Fail]
+TC-010: Reply to Comment
+•	Description: Verify that replies can be added to comments
+•	Prerequisites: Application is loaded, comments exist
+•	Test Steps:
+i.	Enter a reply in the reply box
+ii.	Click "Reply"
+iii.	Verify reply appears under the comment
+•	Expected Results: Reply is added under the comment
+•	Actual Results: Reply is added
+•	Status: Pass
+3.5 Accessibility
+TC-011: Keyboard Navigation
+•	Description: Verify that all features can be accessed via keyboard
+•	Prerequisites: Application is loaded
+•	Test Steps:
+i.	Use Tab key to navigate through the application
+ii.	Use Enter key to activate buttons
+iii.	Use arrow keys to adjust sliders
+•	Expected Results: All features can be accessed and operated via keyboard
+•	Actual Results: All features can be accessed
+•	Status: Pass
+TC-012: Screen Reader Compatibility
+•	Description: Verify that screen readers can read all content
+•	Prerequisites: Application is loaded, screen reader is active
+•	Test Steps:
+i.	Navigate through the application using screen reader
+ii.	Verify all content is read correctly
+•	Expected Results: Screen reader reads all content correctly
+•	Actual Results: Screen reader reads all content correctly as expected
+•	Status: Pass
+3.6 Error Handling
+TC-013: Network Error
+•	Description: Verify that network errors are handled gracefully
+•	Prerequisites: Application is loaded, network is disconnected
+•	Test Steps:
+i.	Disconnect from the internet
+ii.	Try to play a video
+iii.	Verify error message is displayed
+•	Expected Results: Appropriate error message is displayed
+•	Actual Results: Error message is not displayed
+•	Status: Fail
+TC-014: Invalid Input
+•	Description: Verify that invalid inputs are handled correctly
+•	Prerequisites: Application is loaded
+•	Test Steps:
+i.	Enter an invalid comment (empty or too long)
+ii.	Click "Post Comment"
+iii.	Verify error message is displayed
+•	Expected Results: Appropriate error message is displayed
+•	Actual Results: Error message is displayed for empty comment. Error message is not displayed for comment that is too long. (above 500 char)
+•	Status: Fail
+4. Test Execution
+4.1 Test Execution Schedule
+•	Manual Testing: Day 1-2
+•	Automated Testing: Day 3-4
+•	Accessibility Testing: Day 5
+•	Performance Testing: Day 6
+4.2 Test Execution Results
+Test Case ID	Description	Status	Notes
+TC-001	Video Play/Pause	Fail	
+TC-002	Volume Control	Not verified	
+TC-003	Playback Rate	Not verified	
+TC-004	Search by Title	Pass	
+TC-005	Search by Tags	Pass	
+TC-006	Filter by Recent	Fail	
+TC-007	Add Bookmark	Pass	
+TC-008	Navigate to Bookmark	Fail	
+TC-009	Add Comment	Pass	
+TC-010	Reply to Comment	Pass	
+TC-011	Keyboard Navigation	Pass	
+TC-012	Screen Reader Compatibility	Pass	
+TC-013	Network Error	Fail	
+TC-014	Invalid Input	Fail	
+5. Defect Tracking
+5.1 Defect Summary
+Severity	Count
+Pass	7
+High	2
+Medium	6
+Low	1
+5.2 Defect Details
+See Bug Report Document for detailed defect information.
+7. Conclusion
+7.1 Summary
+Types of Tests Performed
+•	✅ Functional Testing
+•	✅ UI/UX Testing (manual)
+•	✅ Accessibility Testing (NVDA screen reader)
+•	✅ Boundary & Negative Testing
+•	✅ Component-level Unit Tests
+________________________________________
+🚩 Test Results Summary
+•	Total Test Cases Executed:14
+•	Passed: 7
+•	Failed: 5
+•	Bugs Reported: 10
+________________________________________
+
+7.2 Recommendations
+.  Fix Sort State Persistence on Refresh
+•	Ensure user-selected sort filters (e.g., rating, date) persist after refresh.
+2. Resolve Broken Thumbnails on Network Disconnect
+•	Implement fallback thumbnails or placeholders.
+•	Show a “retry” icon or auto-retry logic when the network is restored.
+3. Make Like Button Functional on Reply Comments
+•	Add missing tap/click event listeners for nested comment elements.
+4. Correct ‘Recent’ Filter Logic
+•	Ensure newly added videos surface correctly at the top.
+ 5. Improve Offline Handling
+•	Gracefully handle full/partial network disconnections.
+•	Add offline indicators where feasible.
+Long-term Improvements
+UI Feedback for Actions
+•	Add visual feedback (like animation or colour change) when a button is tapped, even before the backend confirms.
+
+8. Appendices
+8.1 Test Environment Setup
+Category	Details
+Operating System	Windows 10 (64-bit)
+Node.js Version	v18.x (LTS)
+Package Manager	npm v9.x
+Browser	Google Chrome v123 (latest)
+Code Editor	Visual Studio Code v1.88
+Terminal	Windows Command Prompt / PowerShell
+Testing Framework	Jest + React Testing Library
+Accessibility Tool	NVDA (Nonvisual Desktop Access) v2024
+Git Version	Git v2.40
+
+8.2 Test Data
+Test Scenario	Test Data Used	Purpose
+		
+Comment Posting	Nice video! 👍 Great tutorial!	To verify comment submission & display
+Bookmarking Videos	Randomly selected 3 different video titles	To test bookmark toggle functionality
+Filtering by Category	Category: All videos, recent, popular	To verify filtering behavior
+Sorting by Date/Title	Sort: Newest First, Alphabetical (A-Z)	To validate sorting logic
+Search Bar	Search: React, testing	To check search 
+Accessibility Testing	Tab key, Enter, NVDA screen reader	To validate keyboard & screen reader accessibility
+
+
+
