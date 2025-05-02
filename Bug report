@@ -1,0 +1,361 @@
+Bug Report Template
+Bug Report #1
+Title
+Videos cannot be played or paused.
+Description
+All Videos Fail to Load and displays error “Error Loading Video” 
+Severity
+•	 Critical
+Priority:
+P1
+Component
+Video player
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Preconditions: Application is running locally
+Steps to Reproduce
+1.	Open TinyFlix homepage 
+2.	Click on any video
+3.	Observe the player behaviour and Wait for the video to load
+Expected Behaviour
+Videos should load and play without errors. 
+Actual Behaviour
+All videos fail to load and show a generic error. An error message appears: “An error occurred while loading the video.” 
+
+Screenshots/Videos
+ 
+Additional context:
+This issue occurs for every video, not just specific ones, indicating a global playback or source loading failure.
+Suggested Fix
+ Check if video URLs in API are broken or inaccessible
+
+________________________________________
+Bug Report #2
+Title
+Sign-in flow is not functional.
+Description:
+When accessing the Tinyflix web application, there is no functional sign-in flow presented to the user. This prevents account-based actions like saving preferences, applying filters persistently, or uploading content.
+Severity
+•	High
+Priority
+P1
+Component
+Authentication section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.Go to the browser.
+2.  Look for sign-in button.
+       3.Click sign- in button 
+Expected Behaviour
+A sign-in authentication flow should be functional, allowing users to log in.
+Actual Behaviour
+No sign-in flow is available on the page. Users remain anonymous, with no way to log in or save session data.
+Screenshots/Videos
+ 
+
+Suggested Fix
+Implement or enable the existing auth flow
+________________________________________
+Bug Report #3
+Title
+Sign-up flow is not functional.
+Description:
+When accessing the Tinyflix web application, there is no sign-up flow presented to the user. This prevents account-based actions like saving preferences, applying filters persistently, or uploading content
+Severity
+•	High
+Priority
+P1
+Component
+Authentication section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.Go to the browser.
+2. Look for sign-up button.
+       3.Click sign up button 
+Expected Behaviour
+A sign-up flow should be visible and functional, allowing users to signup.
+Actual Behaviour
+No sign-up flow is available on the page. Users remain anonymous, with no way register.
+
+
+Screenshots/Videos
+ 
+
+Suggested Fix
+Implement or enable the existing auth flow for sign up.
+________________________________________
+
+Bug Report #4
+Title
+“Recent" Filter Does Not Display Recently Added Videos 
+Description
+The ‘Recent’ filter is intended to help users discover the most recently added videos on TinyFlix. However, when this filter is applied, the list does not reflect the newest content. 
+Severity
+Medium
+Priority
+P2
+Component
+Sorting & Filtering 
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.	Open TinyFlix homepage 
+2.	Use the dropdown to select the “Recent” filter
+3.	 Observe the list of videos displayed
+Expected Behaviour
+The most recently added videos should appear at the top
+Actual Behaviour
+The list does not change, or displays older/random videos
+Screenshots/Videos
+ 
+Additional Context
+The "Recent" filter appears in the sorting dropdown, but selecting it does not visibly display videos.
+Suggested Fix
+Ensure filtering logic sorts videos by creation date descending. ________________________________________
+Bug Report #5
+Title
+Like Button for Reply Comments Is Unresponsive
+Description
+In the comments section under videos, users can reply to other users' comments. Each reply comment includes a Like button that allows users to express appreciation. However, when users attempt to tap the Like button specifically for reply comments, nothing happens. The button does not register the tap — no animation, colour change, or count update — and no network activity is triggered.
+This issue does not affect top-level comments, which respond as expected when liked.
+Severity
+•	Medium
+Priority
+P2
+Component
+Comments Section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.	Navigate to any video with existing comments and replies 
+2.	Locate a reply under a parent comment 
+3.	Click the "Like" button on the reply 
+Expected Behaviour
+The like count should increment and the button should highlight or toggle state
+Actual Behaviour
+Nothing happens when the "Like" button on a reply comment is clicked
+Screenshots/Videos
+ Additional Context
+This issue appears only for reply-level comments; liking parent comments works correctly.
+Suggested Fix
+Check if the reply comment object is correctly wired to the like API.
+________________________________________
+Bug Report #6
+Title
+Refresh resets ‘Sort by rating’ and ‘Sort by date’ filter and shows ‘Sort by title’ videos
+Description
+When clicking refresh it resets ‘Sort by rating’ and ‘Sort by date’ filters to default ‘Sort by title’ 
+Severity
+•	Medium
+Priority
+P2
+Component
+Sorting and Filtering Section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.Go to the video listing page.
+2.Apply a filter based on rating or date
+       3.Observe the filtered results.
+       4.Refresh the page.
+ 
+Expected Behaviour
+The filter should persist after refresh, and only videos matching the selected rating should be displayed. The rating filter remains active after the page refresh, and only matching videos are shown.
+
+Actual Behaviour
+The filter is reset after the refresh, and the list of ‘Sort by title’ videos appears.
+Screenshots/Videos
+ 
+
+Suggested Fix
+Maintain filter state in URL query parameters.
+________________________________________
+
+Bug Report #7
+Title
+Refresh resets ’Recent’ and ‘Popular’ filter and shows ‘All videos’ videos
+Severity
+•	Medium
+Priority
+P2
+Component
+Filter Section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.Go to the video listing page.
+2.Apply a filter based on ‘Recent’ or ‘Popular’ 
+       3.Observe the filtered results.
+       4.Refresh the page. 
+Expected Behaviour
+The filter should persist after refresh, and only videos matching the selected rating should be displayed. The rating filter remains active after the page refresh, and only matching videos are shown.
+Actual Behaviour
+The filter is reset after the refresh, and the list of ‘All videos’ videos appear.
+Screenshots/Videos
+ 
+
+Suggested Fix
+Maintain filter state in URL query parameters.
+________________________________________
+Bug report#8
+Title
+Clicking Bookmarks Doesn’t Jump to Timestamp
+Description
+When a user clicks on a saved bookmark in the video player interface, the video does not seek to the associated timestamp. These breaks expected behaviour and reduces the usefulness of bookmarks as a navigation tool.
+Severity
+•	Medium
+Priority
+P2
+Component
+Bookmarks section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.	Play a video on Tinyflix.
+2.	Create a bookmark at a specific timestamp (e.g., 01:05).
+3.	Click on that bookmark in the list or sidebar.
+4.	Observe that the video does not jump to the selected timestamp.
+Expected Behaviour
+Clicking on a bookmark should trigger the video player to seek to the corresponding time (e.g., video should jump to 01:05).
+Actual Behaviour
+Clicking the bookmark has no effect; the video continues playing from its current time.
+Screenshots/Videos
+ 
+________________________________________
+
+Bug report #9
+Title
+Broken thumbnails displayed for all videos when network disconnects in TinyFlix
+Description
+When network is disconnected, videos are displayed as broken thumbnails.
+Severity
+•	Medium
+Priority
+P2
+Component
+Bookmarks section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.	Launch TinyFlix.
+2.	While thumbnails are still loading, disconnect the network
+3.	Observe the video list section.
+Expected Behaviour
+•	App should detect the network disconnection.
+•	If thumbnails fail to load due to loss of connectivity, show a default placeholder image.
+•	Optionally, show a small overlay icon indicating "offline" or allow a retry when the network is restored.
+Actual Behaviour
+Video thumbnails are replaced with broken image icons or empty spaces. No fallback image or user-friendly message is shown. UI looks incomplete and unresponsive in those areas.
+Screenshots/Videos
+ 
+________________________________________
+Bug Report #10
+Title
+No Warning Message When ‘Comment’ and’ Reply ‘Exceeds 500 Characters
+Description
+The comment input field and reply field allows users to enter more than 500 characters, but no warning or feedback message is displayed when the limit is exceeded. This may confuse users when their full comment is not saved or displayed correctly. If the input is more than 500 characters, it displays only the first 500 characters.
+Severity
+•	Low
+Priority
+P3
+Component
+Comments section and reply section
+Environment
+•	Browser: Chrome 
+•	OS: Windows 11
+•	Screen Size :1920x1080
+•	Device: Desktop
+Steps to Reproduce
+1.	Navigate to the comment input field.
+2.	Enter text longer than 500 characters.
+3.	Observe that no warning or character limit feedback is shown.
+Expected Behaviour
+A warning should appear once the character count exceeds 500, such as:
+❗ Comment too long. Limit is 500 characters. (Current: 537)
+Actual Behaviour
+Users can type beyond 500 characters with no warning, potentially leading to confusion or data truncation.
+Screenshots/Videos
+ 
+
+Suggested Fix
+Display a real-time character counter below the input field (e.g., 432 / 500 characters).
+Show a red warning message when the count exceeds 500.
+
+Bug Prioritization
+Critical Bugs
+[Bug #1] - Videos cannot be played or paused.
+High Priority Bugs
+[Bug #2] - Sign-in flow is not functional.
+[Bug #3] - Sign-up flow is not functional.
+Medium Priority Bugs
+[Bug #4] - “Recent" Filter Does Not Display Recently Added Videos 
+[Bug #5] - Like Button for Reply Comments Is Unresponsive
+[Bug #6] - Refresh resets ‘Sort by rating’ and ‘Sort by date’ filter and shows ‘Sort by title’ videos
+[Bug #7] -Refresh resets ’Recent’ and ‘Popular’ filter and shows ‘All videos’ videos
+[Bug #8] - Clicking Bookmarks Doesn’t Jump to Timestamp
+[Bug #9 - Broken thumbnails displayed for all videos when network disconnects in TinyFlix
+Low Priority Bugs
+[Bug #10] - No Warning Message When ‘Comment’ and’ Reply ‘Exceeds 500 Characters
+
+Summary of Findings
+Total Bugs Identified:10
+Distribution by Severity
+•	Critical: 1
+•	High: 2
+•	Medium:6
+•	Low: 1
+Distribution by Component
+•	Video Player: 1
+•	Search/Filter: 3
+•	Bookmarks: 1
+•	Comments: 2
+•	Performance: 1
+•	Other: 2
+Recommendations
+Immediate Actions
+1.  Fix Sort State Persistence on Refresh
+•	Ensure user-selected sort filters (e.g., rating, date) persist after refresh.
+2. Resolve Broken Thumbnails on Network Disconnect
+•	Implement fallback thumbnails or placeholders.
+•	Show a “retry” icon or auto-retry logic when the network is restored.
+3. Make Like Button Functional on Reply Comments
+•	Add missing tap/click event listeners for nested comment elements.
+4. Correct ‘Recent’ Filter Logic
+•	Ensure newly added videos surface correctly at the top.
+ 5. Improve Offline Handling
+•	Gracefully handle full/partial network disconnections.
+•	Add offline indicators where feasible.
+
+Long-term Improvements
+UI Feedback for Actions
+•	Add visual feedback (like animation or colour change) when a button is tapped, even before the backend confirms.
+
